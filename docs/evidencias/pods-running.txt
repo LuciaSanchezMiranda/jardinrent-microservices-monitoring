@@ -1,0 +1,21 @@
+2026-10-21T18:54:15-05:00
+
+minikube -p jardinrent kubectl -- --context=jardinrent get pods -A
+
+NAMESPACE     NAME                                                     READY   STATUS    RESTARTS      AGE
+jardinrent    cotizaciones-7c678d588-h8rjq                             1/1     Running   0             18m
+jardinrent    herramientas-5d8789d864-7wrxq                            1/1     Running   0             7m46s
+kube-system   coredns-66bc5c9577-tphhk                                 1/1     Running   1 (34m ago)   37m
+kube-system   etcd-jardinrent                                          1/1     Running   1 (34m ago)   37m
+kube-system   kube-apiserver-jardinrent                                1/1     Running   1 (34m ago)   37m
+kube-system   kube-controller-manager-jardinrent                       1/1     Running   1 (34m ago)   37m
+kube-system   kube-proxy-nfphq                                         1/1     Running   1 (34m ago)   37m
+kube-system   kube-scheduler-jardinrent                                1/1     Running   1 (34m ago)   37m
+kube-system   metrics-server-7794d466d5-wr7r7                          1/1     Running   0             34m
+kube-system   storage-provisioner                                      1/1     Running   2 (34m ago)   37m
+monitoring    alertmanager-observabilidad-kube-promet-alertmanager-0   2/2     Running   0             32m
+monitoring    observabilidad-grafana-6cbcd959f7-4lvns                  3/3     Running   0             20m
+monitoring    observabilidad-kube-promet-operator-7f4cbb4d66-7thdv     1/1     Running   0             33m
+monitoring    observabilidad-kube-state-metrics-77fb89674-lcfvx        1/1     Running   0             33m
+monitoring    observabilidad-prometheus-node-exporter-gtjnm            1/1     Running   0             33m
+monitoring    prometheus-observabilidad-kube-promet-prometheus-0       2/2     Running   0             32m

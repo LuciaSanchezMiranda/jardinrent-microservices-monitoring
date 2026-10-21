@@ -1,0 +1,586 @@
+{
+  "capturedAt": "2026-10-21T23:44:22.783592+00:00",
+  "profile": "jardinrent",
+  "queries": {
+    "targets_up": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "up",
+              "container": "cotizaciones",
+              "endpoint": "http",
+              "instance": "10.244.0.23:8080",
+              "job": "cotizaciones",
+              "namespace": "jardinrent",
+              "pod": "cotizaciones-7c678d588-h8rjq",
+              "service": "cotizaciones"
+            },
+            "value": [
+              1792626262.831,
+              "1"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "up",
+              "container": "herramientas",
+              "endpoint": "http",
+              "instance": "10.244.0.27:8080",
+              "job": "herramientas",
+              "namespace": "jardinrent",
+              "pod": "herramientas-5d8789d864-p6gd9",
+              "service": "herramientas"
+            },
+            "value": [
+              1792626262.831,
+              "1"
+            ]
+          }
+        ]
+      }
+    },
+    "replicas": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "kube_deployment_status_replicas_available",
+              "container": "kube-state-metrics",
+              "deployment": "herramientas",
+              "endpoint": "http",
+              "instance": "10.244.0.6:8080",
+              "job": "kube-state-metrics",
+              "namespace": "jardinrent",
+              "pod": "observabilidad-kube-state-metrics-77fb89674-lcfvx",
+              "service": "observabilidad-kube-state-metrics"
+            },
+            "value": [
+              1792626262.854,
+              "1"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "kube_deployment_status_replicas_available",
+              "container": "kube-state-metrics",
+              "deployment": "cotizaciones",
+              "endpoint": "http",
+              "instance": "10.244.0.6:8080",
+              "job": "kube-state-metrics",
+              "namespace": "jardinrent",
+              "pod": "observabilidad-kube-state-metrics-77fb89674-lcfvx",
+              "service": "observabilidad-kube-state-metrics"
+            },
+            "value": [
+              1792626262.854,
+              "1"
+            ]
+          }
+        ]
+      }
+    },
+    "delay": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "herramientas_delay_seconds",
+              "application": "herramientas-service",
+              "container": "herramientas",
+              "endpoint": "http",
+              "instance": "10.244.0.27:8080",
+              "job": "herramientas",
+              "namespace": "jardinrent",
+              "pod": "herramientas-5d8789d864-p6gd9",
+              "service": "herramientas"
+            },
+            "value": [
+              1792626262.873,
+              "0"
+            ]
+          }
+        ]
+      }
+    },
+    "stock": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "herramientas_stock",
+              "application": "herramientas-service",
+              "container": "herramientas",
+              "endpoint": "http",
+              "herramienta_id": "1",
+              "instance": "10.244.0.27:8080",
+              "job": "herramientas",
+              "namespace": "jardinrent",
+              "pod": "herramientas-5d8789d864-p6gd9",
+              "service": "herramientas"
+            },
+            "value": [
+              1792626262.886,
+              "0"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "herramientas_stock",
+              "application": "herramientas-service",
+              "container": "herramientas",
+              "endpoint": "http",
+              "herramienta_id": "2",
+              "instance": "10.244.0.27:8080",
+              "job": "herramientas",
+              "namespace": "jardinrent",
+              "pod": "herramientas-5d8789d864-p6gd9",
+              "service": "herramientas"
+            },
+            "value": [
+              1792626262.886,
+              "4"
+            ]
+          }
+        ]
+      }
+    },
+    "timeouts": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "cotizaciones_timeouts_total",
+              "application": "cotizaciones-service",
+              "container": "cotizaciones",
+              "endpoint": "http",
+              "instance": "10.244.0.23:8080",
+              "job": "cotizaciones",
+              "namespace": "jardinrent",
+              "pod": "cotizaciones-7c678d588-h8rjq",
+              "service": "cotizaciones"
+            },
+            "value": [
+              1792626262.901,
+              "324"
+            ]
+          }
+        ]
+      }
+    },
+    "rechazos": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "cotizaciones_rechazadas_total",
+              "application": "cotizaciones-service",
+              "container": "cotizaciones",
+              "endpoint": "http",
+              "instance": "10.244.0.23:8080",
+              "job": "cotizaciones",
+              "namespace": "jardinrent",
+              "pod": "cotizaciones-7c678d588-h8rjq",
+              "service": "cotizaciones"
+            },
+            "value": [
+              1792626262.914,
+              "348"
+            ]
+          }
+        ]
+      }
+    },
+    "p95": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {},
+            "value": [
+              1792626262.927,
+              "0.017768596886363633"
+            ]
+          }
+        ]
+      }
+    },
+    "alertas": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "ALERTS",
+              "alertname": "HerramientaSinStock",
+              "alertstate": "firing",
+              "application": "herramientas-service",
+              "container": "herramientas",
+              "endpoint": "http",
+              "herramienta_id": "1",
+              "instance": "10.244.0.27:8080",
+              "job": "herramientas",
+              "namespace": "jardinrent",
+              "pod": "herramientas-5d8789d864-p6gd9",
+              "proyecto": "jardinrent",
+              "service": "herramientas",
+              "severity": "warning"
+            },
+            "value": [
+              1792626262.945,
+              "1"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "targets": [
+    {
+      "discoveredLabels": {
+        "__address__": "10.244.0.23:8080",
+        "__always_scrape_classic_histograms__": "false",
+        "__convert_classic_histograms_to_nhcb__": "false",
+        "__meta_kubernetes_endpoint_address_target_kind": "Pod",
+        "__meta_kubernetes_endpoint_address_target_name": "cotizaciones-7c678d588-h8rjq",
+        "__meta_kubernetes_endpoint_node_name": "jardinrent",
+        "__meta_kubernetes_endpoint_port_name": "http",
+        "__meta_kubernetes_endpoint_port_protocol": "TCP",
+        "__meta_kubernetes_endpoint_ready": "true",
+        "__meta_kubernetes_endpoints_annotation_endpoints_kubernetes_io_last_change_trigger_time": "2026-10-21T23:35:52Z",
+        "__meta_kubernetes_endpoints_annotationpresent_endpoints_kubernetes_io_last_change_trigger_time": "true",
+        "__meta_kubernetes_endpoints_label_app": "cotizaciones",
+        "__meta_kubernetes_endpoints_label_endpoints_kubernetes_io_managed_by": "endpoint-controller",
+        "__meta_kubernetes_endpoints_label_proyecto": "jardinrent",
+        "__meta_kubernetes_endpoints_labelpresent_app": "true",
+        "__meta_kubernetes_endpoints_labelpresent_endpoints_kubernetes_io_managed_by": "true",
+        "__meta_kubernetes_endpoints_labelpresent_proyecto": "true",
+        "__meta_kubernetes_endpoints_name": "cotizaciones",
+        "__meta_kubernetes_namespace": "jardinrent",
+        "__meta_kubernetes_pod_annotation_kubectl_kubernetes_io_restartedAt": "2026-10-21T18:35:25-05:00",
+        "__meta_kubernetes_pod_annotationpresent_kubectl_kubernetes_io_restartedAt": "true",
+        "__meta_kubernetes_pod_container_image": "jardinrent/cotizaciones:1.0.0",
+        "__meta_kubernetes_pod_container_init": "false",
+        "__meta_kubernetes_pod_container_name": "cotizaciones",
+        "__meta_kubernetes_pod_container_port_name": "http",
+        "__meta_kubernetes_pod_container_port_number": "8080",
+        "__meta_kubernetes_pod_container_port_protocol": "TCP",
+        "__meta_kubernetes_pod_controller_kind": "ReplicaSet",
+        "__meta_kubernetes_pod_controller_name": "cotizaciones-7c678d588",
+        "__meta_kubernetes_pod_host_ip": "192.168.67.2",
+        "__meta_kubernetes_pod_ip": "10.244.0.23",
+        "__meta_kubernetes_pod_label_app": "cotizaciones",
+        "__meta_kubernetes_pod_label_pod_template_hash": "7c678d588",
+        "__meta_kubernetes_pod_label_proyecto": "jardinrent",
+        "__meta_kubernetes_pod_labelpresent_app": "true",
+        "__meta_kubernetes_pod_labelpresent_pod_template_hash": "true",
+        "__meta_kubernetes_pod_labelpresent_proyecto": "true",
+        "__meta_kubernetes_pod_name": "cotizaciones-7c678d588-h8rjq",
+        "__meta_kubernetes_pod_node_name": "jardinrent",
+        "__meta_kubernetes_pod_phase": "Running",
+        "__meta_kubernetes_pod_ready": "true",
+        "__meta_kubernetes_pod_uid": "0f8a9bc9-b49a-4336-86de-f10252bb0ce1",
+        "__meta_kubernetes_service_annotation_kubectl_kubernetes_io_last_applied_configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Service\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"cotizaciones\",\"proyecto\":\"jardinrent\"},\"name\":\"cotizaciones\",\"namespace\":\"jardinrent\"},\"spec\":{\"ports\":[{\"name\":\"http\",\"nodePort\":31082,\"port\":8080,\"targetPort\":\"http\"}],\"selector\":{\"app\":\"cotizaciones\"},\"type\":\"NodePort\"}}\n",
+        "__meta_kubernetes_service_annotationpresent_kubectl_kubernetes_io_last_applied_configuration": "true",
+        "__meta_kubernetes_service_label_app": "cotizaciones",
+        "__meta_kubernetes_service_label_proyecto": "jardinrent",
+        "__meta_kubernetes_service_labelpresent_app": "true",
+        "__meta_kubernetes_service_labelpresent_proyecto": "true",
+        "__meta_kubernetes_service_name": "cotizaciones",
+        "__metrics_path__": "/metrics",
+        "__scheme__": "http",
+        "__scrape_interval__": "15s",
+        "__scrape_native_histograms__": "false",
+        "__scrape_timeout__": "5s",
+        "job": "serviceMonitor/jardinrent/cotizaciones/0"
+      },
+      "labels": {
+        "container": "cotizaciones",
+        "endpoint": "http",
+        "instance": "10.244.0.23:8080",
+        "job": "cotizaciones",
+        "namespace": "jardinrent",
+        "pod": "cotizaciones-7c678d588-h8rjq",
+        "service": "cotizaciones"
+      },
+      "scrapePool": "serviceMonitor/jardinrent/cotizaciones/0",
+      "scrapeUrl": "http://10.244.0.23:8080/metrics",
+      "globalUrl": "http://10.244.0.23:8080/metrics",
+      "lastError": "",
+      "lastScrape": "2026-10-21T23:44:10.337107874Z",
+      "lastScrapeDuration": 0.009040262,
+      "health": "up",
+      "scrapeInterval": "15s",
+      "scrapeTimeout": "5s"
+    },
+    {
+      "discoveredLabels": {
+        "__address__": "10.244.0.27:8080",
+        "__always_scrape_classic_histograms__": "false",
+        "__convert_classic_histograms_to_nhcb__": "false",
+        "__meta_kubernetes_endpoint_address_target_kind": "Pod",
+        "__meta_kubernetes_endpoint_address_target_name": "herramientas-5d8789d864-p6gd9",
+        "__meta_kubernetes_endpoint_node_name": "jardinrent",
+        "__meta_kubernetes_endpoint_port_name": "http",
+        "__meta_kubernetes_endpoint_port_protocol": "TCP",
+        "__meta_kubernetes_endpoint_ready": "true",
+        "__meta_kubernetes_endpoints_annotation_endpoints_kubernetes_io_last_change_trigger_time": "2026-10-21T23:42:33Z",
+        "__meta_kubernetes_endpoints_annotationpresent_endpoints_kubernetes_io_last_change_trigger_time": "true",
+        "__meta_kubernetes_endpoints_label_app": "herramientas",
+        "__meta_kubernetes_endpoints_label_endpoints_kubernetes_io_managed_by": "endpoint-controller",
+        "__meta_kubernetes_endpoints_label_proyecto": "jardinrent",
+        "__meta_kubernetes_endpoints_labelpresent_app": "true",
+        "__meta_kubernetes_endpoints_labelpresent_endpoints_kubernetes_io_managed_by": "true",
+        "__meta_kubernetes_endpoints_labelpresent_proyecto": "true",
+        "__meta_kubernetes_endpoints_name": "herramientas",
+        "__meta_kubernetes_namespace": "jardinrent",
+        "__meta_kubernetes_pod_annotation_kubectl_kubernetes_io_restartedAt": "2026-10-21T18:35:25-05:00",
+        "__meta_kubernetes_pod_annotationpresent_kubectl_kubernetes_io_restartedAt": "true",
+        "__meta_kubernetes_pod_container_image": "jardinrent/herramientas:1.0.0",
+        "__meta_kubernetes_pod_container_init": "false",
+        "__meta_kubernetes_pod_container_name": "herramientas",
+        "__meta_kubernetes_pod_container_port_name": "http",
+        "__meta_kubernetes_pod_container_port_number": "8080",
+        "__meta_kubernetes_pod_container_port_protocol": "TCP",
+        "__meta_kubernetes_pod_controller_kind": "ReplicaSet",
+        "__meta_kubernetes_pod_controller_name": "herramientas-5d8789d864",
+        "__meta_kubernetes_pod_host_ip": "192.168.67.2",
+        "__meta_kubernetes_pod_ip": "10.244.0.27",
+        "__meta_kubernetes_pod_label_app": "herramientas",
+        "__meta_kubernetes_pod_label_pod_template_hash": "5d8789d864",
+        "__meta_kubernetes_pod_label_proyecto": "jardinrent",
+        "__meta_kubernetes_pod_labelpresent_app": "true",
+        "__meta_kubernetes_pod_labelpresent_pod_template_hash": "true",
+        "__meta_kubernetes_pod_labelpresent_proyecto": "true",
+        "__meta_kubernetes_pod_name": "herramientas-5d8789d864-p6gd9",
+        "__meta_kubernetes_pod_node_name": "jardinrent",
+        "__meta_kubernetes_pod_phase": "Running",
+        "__meta_kubernetes_pod_ready": "true",
+        "__meta_kubernetes_pod_uid": "55975a7f-e04f-498c-90a2-1bd153958a91",
+        "__meta_kubernetes_service_annotation_kubectl_kubernetes_io_last_applied_configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Service\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"herramientas\",\"proyecto\":\"jardinrent\"},\"name\":\"herramientas\",\"namespace\":\"jardinrent\"},\"spec\":{\"ports\":[{\"name\":\"http\",\"nodePort\":31081,\"port\":8080,\"targetPort\":\"http\"}],\"selector\":{\"app\":\"herramientas\"},\"type\":\"NodePort\"}}\n",
+        "__meta_kubernetes_service_annotationpresent_kubectl_kubernetes_io_last_applied_configuration": "true",
+        "__meta_kubernetes_service_label_app": "herramientas",
+        "__meta_kubernetes_service_label_proyecto": "jardinrent",
+        "__meta_kubernetes_service_labelpresent_app": "true",
+        "__meta_kubernetes_service_labelpresent_proyecto": "true",
+        "__meta_kubernetes_service_name": "herramientas",
+        "__metrics_path__": "/metrics",
+        "__scheme__": "http",
+        "__scrape_interval__": "15s",
+        "__scrape_native_histograms__": "false",
+        "__scrape_timeout__": "5s",
+        "job": "serviceMonitor/jardinrent/herramientas/0"
+      },
+      "labels": {
+        "container": "herramientas",
+        "endpoint": "http",
+        "instance": "10.244.0.27:8080",
+        "job": "herramientas",
+        "namespace": "jardinrent",
+        "pod": "herramientas-5d8789d864-p6gd9",
+        "service": "herramientas"
+      },
+      "scrapePool": "serviceMonitor/jardinrent/herramientas/0",
+      "scrapeUrl": "http://10.244.0.27:8080/metrics",
+      "globalUrl": "http://10.244.0.27:8080/metrics",
+      "lastError": "",
+      "lastScrape": "2026-10-21T23:44:17.014834318Z",
+      "lastScrapeDuration": 0.014985775,
+      "health": "up",
+      "scrapeInterval": "15s",
+      "scrapeTimeout": "5s"
+    }
+  ],
+  "pods": [
+    {
+      "namespace": "jardinrent",
+      "name": "cotizaciones-7c678d588-h8rjq",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "cotizaciones",
+          "ready": true,
+          "restarts": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-21T23:35:31Z"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "namespace": "jardinrent",
+      "name": "herramientas-5d8789d864-p6gd9",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "herramientas",
+          "ready": true,
+          "restarts": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-21T23:42:09Z"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "namespace": "monitoring",
+      "name": "alertmanager-observabilidad-kube-promet-alertmanager-0",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "alertmanager",
+          "ready": true,
+          "restarts": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-21T23:24:11Z"
+            }
+          }
+        },
+        {
+          "name": "config-reloader",
+          "ready": true,
+          "restarts": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-21T23:24:12Z"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "namespace": "monitoring",
+      "name": "observabilidad-grafana-6cbcd959f7-4lvns",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "grafana",
+          "ready": true,
+          "restarts": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-21T23:34:08Z"
+            }
+          }
+        },
+        {
+          "name": "grafana-sc-dashboard",
+          "ready": true,
+          "restarts": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-21T23:34:07Z"
+            }
+          }
+        },
+        {
+          "name": "grafana-sc-datasources",
+          "ready": true,
+          "restarts": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-21T23:34:08Z"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "namespace": "monitoring",
+      "name": "observabilidad-kube-promet-operator-7f4cbb4d66-7thdv",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "kube-prometheus-stack",
+          "ready": true,
+          "restarts": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-21T23:21:37Z"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "namespace": "monitoring",
+      "name": "observabilidad-kube-state-metrics-77fb89674-lcfvx",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "kube-state-metrics",
+          "ready": true,
+          "restarts": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-21T23:21:28Z"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "namespace": "monitoring",
+      "name": "observabilidad-prometheus-node-exporter-gtjnm",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "node-exporter",
+          "ready": true,
+          "restarts": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-21T23:21:22Z"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "namespace": "monitoring",
+      "name": "prometheus-observabilidad-kube-promet-prometheus-0",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "config-reloader",
+          "ready": true,
+          "restarts": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-21T23:24:36Z"
+            }
+          }
+        },
+        {
+          "name": "prometheus",
+          "ready": true,
+          "restarts": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-21T23:24:35Z"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+NAME                            READY   STATUS             RESTARTS     AGE
+cotizaciones-7c678d588-h8rjq    1/1     Running            0            10m
+herramientas-54499cb5c4-4hxb6   0/1     CrashLoopBackOff   1 (4s ago)   27s

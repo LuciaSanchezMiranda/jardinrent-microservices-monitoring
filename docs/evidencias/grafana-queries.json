@@ -1,0 +1,104 @@
+{
+  "capturedAt": "2026-10-21T23:45:19.105Z",
+  "panels": [
+    {
+      "panel": "Herramientas disponibles (réplicas)",
+      "status": 200,
+      "result": {
+        "A": {
+          "frames": 1
+        }
+      }
+    },
+    {
+      "panel": "Cotizaciones disponibles (réplicas)",
+      "status": 200,
+      "result": {
+        "A": {
+          "frames": 1
+        }
+      }
+    },
+    {
+      "panel": "Requests de Cotizaciones por minuto",
+      "status": 200,
+      "result": {
+        "A": {
+          "frames": 1
+        }
+      }
+    },
+    {
+      "panel": "Latencia p95 al crear cotización",
+      "status": 200,
+      "result": {
+        "A": {
+          "frames": 1
+        }
+      }
+    },
+    {
+      "panel": "Stock por herramienta",
+      "status": 200,
+      "result": {
+        "A": {
+          "frames": 10
+        }
+      }
+    },
+    {
+      "panel": "Timeouts por minuto",
+      "status": 200,
+      "result": {
+        "A": {
+          "frames": 1
+        }
+      }
+    },
+    {
+      "panel": "Retraso artificial de Herramientas",
+      "status": 200,
+      "result": {
+        "A": {
+          "frames": 5
+        }
+      }
+    },
+    {
+      "panel": "Cotizaciones rechazadas por minuto",
+      "status": 200,
+      "result": {
+        "A": {
+          "frames": 1
+        }
+      }
+    },
+    {
+      "panel": "Cotizaciones almacenadas en memoria",
+      "status": 200,
+      "result": {
+        "A": {
+          "frames": 2
+        }
+      }
+    },
+    {
+      "panel": "Alertas activas del proyecto",
+      "status": 200,
+      "result": {
+        "A": {
+          "frames": 3
+        }
+      }
+    },
+    {
+      "panel": "Targets UP / DOWN de ambas APIs",
+      "status": 200,
+      "result": {
+        "A": {
+          "frames": 9
+        }
+      }
+    }
+  ]
+}
