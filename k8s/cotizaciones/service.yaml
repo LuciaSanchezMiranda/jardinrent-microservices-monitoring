@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cotizaciones
+  namespace: jardinrent
+  labels: {app: cotizaciones, proyecto: jardinrent}
+spec:
+  type: NodePort
+  selector: {app: cotizaciones}
+  ports:
+    - {name: http, port: 8080, targetPort: http, nodePort: 31082}

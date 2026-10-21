@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cotizaciones
+  namespace: jardinrent
+  labels: {app: cotizaciones, proyecto: jardinrent}
+spec:
+  replicas: 1
+  strategy: {type: Recreate}
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels: {app: cotizaciones}
+  template:
+    metadata:
+      labels: {app: cotizaciones, proyecto: jardinrent}
+    spec:
+      terminationGracePeriodSeconds: 15
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        seccompProfile: {type: RuntimeDefault}
+      containers:
+        - name: cotizaciones
+          image: jardinrent/cotizaciones:1.0.0
+          imagePullPolicy: Never
+          ports:
+            - {name: http, containerPort: 8080}
+          env:
+            - {name: SERVER_PORT, value: "8080"}
+            - {name: RESPONSE_DELAY_MS, value: "0"}
+            - {name: HERRAMIENTAS_URL, value: "http://herramientas:8080"}
+            - {name: HERRAMIENTAS_TIMEOUT_MS, value: "2000"}
+          resources:
+            requests: {cpu: 100m, memory: 192Mi}
+            limits: {cpu: "1", memory: 384Mi}
+          startupProbe:
+            httpGet: {path: /health, port: http}
+            periodSeconds: 3
+            failureThreshold: 40
+          livenessProbe:
+            httpGet: {path: /health, port: http}
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
+          readinessProbe:
+            httpGet: {path: /health, port: http}
+            periodSeconds: 5
+            timeoutSeconds: 2
+            failureThreshold: 2
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities: {drop: [ALL]}

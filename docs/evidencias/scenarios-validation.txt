@@ -1,0 +1,69 @@
+Evidencia real: baseline 2026-10-21T23:36:52.618919+00:00
+deployment.apps/herramientas env updated
+
+HerramientasCaido FIRING
+Cotización HTTP 503
+Evidencia real: caso1-caida 2026-10-21T23:37:49.347954+00:00
+deployment.apps/herramientas env updated
+Waiting for deployment "herramientas" rollout to finish: 0 of 1 updated replicas are available...
+deployment "herramientas" successfully rolled out
+curl: (7) Failed to connect to localhost port 19090 after 0 ms: Couldn't connect to server
+
+Herramientas: http://localhost:18081/herramientas
+Cotizaciones: http://localhost:18082/cotizaciones
+Grafana: http://localhost:13000/d/jardinrent-overview
+Prometheus: http://localhost:19090/targets
+Usuario Grafana: admin
+
+Cotización HTTP 201
+Evidencia real: caso1-recuperacion 2026-10-21T23:39:33.177872+00:00
+HerramientasCaido resuelta
+CotizacionesConTimeout resuelta
+deployment.apps/herramientas env updated
+Waiting for deployment "herramientas" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "herramientas" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "herramientas" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "herramientas" rollout to finish: 0 of 1 updated replicas are available...
+deployment "herramientas" successfully rolled out
+curl: (7) Failed to connect to localhost port 19090 after 0 ms: Couldn't connect to server
+
+Herramientas: http://localhost:18081/herramientas
+Cotizaciones: http://localhost:18082/cotizaciones
+Grafana: http://localhost:13000/d/jardinrent-overview
+Prometheus: http://localhost:19090/targets
+Usuario Grafana: admin
+
+CotizacionesConTimeout FIRING
+Cotización HTTP 504
+{"service":"herramientas","status":"UP"}Evidencia real: caso2-lentitud 2026-10-21T23:41:12.303859+00:00
+deployment.apps/herramientas env updated
+Waiting for deployment "herramientas" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "herramientas" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "herramientas" rollout to finish: 0 of 1 updated replicas are available...
+deployment "herramientas" successfully rolled out
+curl: (7) Failed to connect to localhost port 19090 after 0 ms: Couldn't connect to server
+
+Herramientas: http://localhost:18081/herramientas
+Cotizaciones: http://localhost:18082/cotizaciones
+Grafana: http://localhost:13000/d/jardinrent-overview
+Prometheus: http://localhost:19090/targets
+Usuario Grafana: admin
+
+Cotización HTTP 201
+Evidencia real: caso2-recuperacion 2026-10-21T23:42:58.597061+00:00
+CotizacionesConTimeout resuelta
+{"id":"1","nombre":"Podadora eléctrica","tarifaDiaria":25.00,"disponibles":0}
+HerramientaSinStock FIRING
+Cotización HTTP 409
+Evidencia real: caso3-stock 2026-10-21T23:44:22.783592+00:00
+{"id":"1","nombre":"Podadora eléctrica","tarifaDiaria":25.00,"disponibles":10}
+Cotización HTTP 201
+Evidencia real: caso3-recuperacion 2026-10-21T23:45:31.125170+00:00
+HerramientaSinStock resuelta
+NAME                            READY   STATUS    RESTARTS   AGE
+cotizaciones-7c678d588-h8rjq    1/1     Running   0          10m
+herramientas-5d8789d864-p6gd9   1/1     Running   0          3m28s
+{"status":"UP","service":"herramientas"}{"service":"cotizaciones","status":"UP"}{"id":"a0613f9d-f0e1-4dc9-9a03-e7e61779d394","herramientaId":"1","herramienta":"Podadora eléctrica","dias":3,"total":75.00,"creadaEn":"2026-10-21T23:45:36.935176216Z"}
+Targets Herramientas y Cotizaciones: UP
+Cuatro reglas de alerta cargadas en Prometheus
+Las tres casuísticas se activaron, alertaron y recuperaron.

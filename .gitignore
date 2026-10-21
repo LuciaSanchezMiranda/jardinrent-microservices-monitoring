@@ -1,0 +1,9 @@
+**/target/
+.idea/
+.vscode/
+*.iml
+.env
+.runtime/
+*.log
+**/.DS_Store
+**/__pycache__/

@@ -1,0 +1,16 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: cotizaciones
+  namespace: jardinrent
+  labels: {proyecto: jardinrent}
+spec:
+  namespaceSelector:
+    matchNames: [jardinrent]
+  selector:
+    matchLabels: {app: cotizaciones, proyecto: jardinrent}
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 15s
+      scrapeTimeout: 5s

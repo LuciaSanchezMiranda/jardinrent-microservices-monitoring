@@ -1,0 +1,9 @@
+#18 11.28 2026-10-21T23:31:56.304Z  INFO 81 --- [herramientas-service] [           main] p.j.herramientas.HerramientasTest        : Starting HerramientasTest using Java 17.0.20.1 with PID 81 (started by root in /workspace/microservices/herramientas-service)
+#18 18.10 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.495 s -- in pe.jardinrent.herramientas.HerramientasTest
+#18 20.19 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+#18 21.25 [INFO] BUILD SUCCESS
+#15 9.517 2026-10-21T23:32:20.441Z  INFO 82 --- [cotizaciones-service] [           main] p.j.cotizaciones.CotizacionesTest        : Starting CotizacionesTest using Java 17.0.20.1 with PID 82 (started by root in /workspace/microservices/cotizaciones-service)
+#15 16.98 [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.882 s -- in pe.jardinrent.cotizaciones.CotizacionesTest
+#15 19.09 [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0
+#15 20.13 [INFO] cotizaciones-service ............................... SUCCESS [ 17.016 s]
+#15 20.13 [INFO] BUILD SUCCESS

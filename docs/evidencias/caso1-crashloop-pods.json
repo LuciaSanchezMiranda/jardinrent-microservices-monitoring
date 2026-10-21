@@ -1,0 +1,313 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "v1",
+            "kind": "Pod",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/restartedAt": "2026-10-21T18:35:25-05:00"
+                },
+                "creationTimestamp": "2026-10-21T23:46:01Z",
+                "generateName": "herramientas-54499cb5c4-",
+                "generation": 1,
+                "labels": {
+                    "app": "herramientas",
+                    "pod-template-hash": "54499cb5c4",
+                    "proyecto": "jardinrent"
+                },
+                "name": "herramientas-54499cb5c4-4hxb6",
+                "namespace": "jardinrent",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "apps/v1",
+                        "blockOwnerDeletion": true,
+                        "controller": true,
+                        "kind": "ReplicaSet",
+                        "name": "herramientas-54499cb5c4",
+                        "uid": "96dff33e-4da8-4384-be47-d70f5c8e1b61"
+                    }
+                ],
+                "resourceVersion": "3333",
+                "uid": "3dcf8f15-8ea6-42d6-a956-6ab864eeff82"
+            },
+            "spec": {
+                "containers": [
+                    {
+                        "env": [
+                            {
+                                "name": "SERVER_PORT",
+                                "value": "puerto-invalido"
+                            },
+                            {
+                                "name": "RESPONSE_DELAY_MS",
+                                "value": "0"
+                            },
+                            {
+                                "name": "HERRAMIENTAS_URL",
+                                "value": "http://herramientas:8080"
+                            },
+                            {
+                                "name": "HERRAMIENTAS_TIMEOUT_MS",
+                                "value": "2000"
+                            }
+                        ],
+                        "image": "jardinrent/herramientas:1.0.0",
+                        "imagePullPolicy": "Never",
+                        "livenessProbe": {
+                            "failureThreshold": 3,
+                            "httpGet": {
+                                "path": "/health",
+                                "port": "http",
+                                "scheme": "HTTP"
+                            },
+                            "periodSeconds": 10,
+                            "successThreshold": 1,
+                            "timeoutSeconds": 2
+                        },
+                        "name": "herramientas",
+                        "ports": [
+                            {
+                                "containerPort": 8080,
+                                "name": "http",
+                                "protocol": "TCP"
+                            }
+                        ],
+                        "readinessProbe": {
+                            "failureThreshold": 2,
+                            "httpGet": {
+                                "path": "/health",
+                                "port": "http",
+                                "scheme": "HTTP"
+                            },
+                            "periodSeconds": 5,
+                            "successThreshold": 1,
+                            "timeoutSeconds": 2
+                        },
+                        "resources": {
+                            "limits": {
+                                "cpu": "1",
+                                "memory": "384Mi"
+                            },
+                            "requests": {
+                                "cpu": "100m",
+                                "memory": "192Mi"
+                            }
+                        },
+                        "securityContext": {
+                            "allowPrivilegeEscalation": false,
+                            "capabilities": {
+                                "drop": [
+                                    "ALL"
+                                ]
+                            }
+                        },
+                        "startupProbe": {
+                            "failureThreshold": 40,
+                            "httpGet": {
+                                "path": "/health",
+                                "port": "http",
+                                "scheme": "HTTP"
+                            },
+                            "periodSeconds": 3,
+                            "successThreshold": 1,
+                            "timeoutSeconds": 1
+                        },
+                        "terminationMessagePath": "/dev/termination-log",
+                        "terminationMessagePolicy": "File",
+                        "volumeMounts": [
+                            {
+                                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                                "name": "kube-api-access-47rc5",
+                                "readOnly": true
+                            }
+                        ]
+                    }
+                ],
+                "dnsPolicy": "ClusterFirst",
+                "enableServiceLinks": true,
+                "nodeName": "jardinrent",
+                "preemptionPolicy": "PreemptLowerPriority",
+                "priority": 0,
+                "restartPolicy": "Always",
+                "schedulerName": "default-scheduler",
+                "securityContext": {
+                    "runAsGroup": 10001,
+                    "runAsNonRoot": true,
+                    "runAsUser": 10001,
+                    "seccompProfile": {
+                        "type": "RuntimeDefault"
+                    }
+                },
+                "serviceAccount": "default",
+                "serviceAccountName": "default",
+                "terminationGracePeriodSeconds": 15,
+                "tolerations": [
+                    {
+                        "effect": "NoExecute",
+                        "key": "node.kubernetes.io/not-ready",
+                        "operator": "Exists",
+                        "tolerationSeconds": 300
+                    },
+                    {
+                        "effect": "NoExecute",
+                        "key": "node.kubernetes.io/unreachable",
+                        "operator": "Exists",
+                        "tolerationSeconds": 300
+                    }
+                ],
+                "volumes": [
+                    {
+                        "name": "kube-api-access-47rc5",
+                        "projected": {
+                            "defaultMode": 420,
+                            "sources": [
+                                {
+                                    "serviceAccountToken": {
+                                        "expirationSeconds": 3607,
+                                        "path": "token"
+                                    }
+                                },
+                                {
+                                    "configMap": {
+                                        "items": [
+                                            {
+                                                "key": "ca.crt",
+                                                "path": "ca.crt"
+                                            }
+                                        ],
+                                        "name": "kube-root-ca.crt"
+                                    }
+                                },
+                                {
+                                    "downwardAPI": {
+                                        "items": [
+                                            {
+                                                "fieldRef": {
+                                                    "apiVersion": "v1",
+                                                    "fieldPath": "metadata.namespace"
+                                                },
+                                                "path": "namespace"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "status": {
+                "conditions": [
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-10-21T23:46:03Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "PodReadyToStartContainers"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-10-21T23:46:01Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "Initialized"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-10-21T23:46:01Z",
+                        "message": "containers with unready status: [herramientas]",
+                        "observedGeneration": 1,
+                        "reason": "ContainersNotReady",
+                        "status": "False",
+                        "type": "Ready"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-10-21T23:46:01Z",
+                        "message": "containers with unready status: [herramientas]",
+                        "observedGeneration": 1,
+                        "reason": "ContainersNotReady",
+                        "status": "False",
+                        "type": "ContainersReady"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-10-21T23:46:01Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "PodScheduled"
+                    }
+                ],
+                "containerStatuses": [
+                    {
+                        "allocatedResources": {
+                            "cpu": "100m",
+                            "memory": "192Mi"
+                        },
+                        "containerID": "docker://313f43faf05b813080a079171605bd417ded2596aeeffe9a4a5ee25bbcaf98d7",
+                        "image": "jardinrent/herramientas:1.0.0",
+                        "imageID": "docker://sha256:9a176384c9b5532dbe308b72899e8fa05fc9d6a0f0c70417b72413d564f26236",
+                        "lastState": {
+                            "terminated": {
+                                "containerID": "docker://313f43faf05b813080a079171605bd417ded2596aeeffe9a4a5ee25bbcaf98d7",
+                                "exitCode": 1,
+                                "finishedAt": "2026-10-21T23:46:24Z",
+                                "reason": "Error",
+                                "startedAt": "2026-10-21T23:46:13Z"
+                            }
+                        },
+                        "name": "herramientas",
+                        "ready": false,
+                        "resources": {
+                            "limits": {
+                                "cpu": "1",
+                                "memory": "384Mi"
+                            },
+                            "requests": {
+                                "cpu": "100m",
+                                "memory": "192Mi"
+                            }
+                        },
+                        "restartCount": 1,
+                        "started": false,
+                        "state": {
+                            "waiting": {
+                                "message": "back-off 10s restarting failed container=herramientas pod=herramientas-54499cb5c4-4hxb6_jardinrent(3dcf8f15-8ea6-42d6-a956-6ab864eeff82)",
+                                "reason": "CrashLoopBackOff"
+                            }
+                        },
+                        "volumeMounts": [
+                            {
+                                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                                "name": "kube-api-access-47rc5",
+                                "readOnly": true,
+                                "recursiveReadOnly": "Disabled"
+                            }
+                        ]
+                    }
+                ],
+                "hostIP": "192.168.67.2",
+                "hostIPs": [
+                    {
+                        "ip": "192.168.67.2"
+                    }
+                ],
+                "observedGeneration": 1,
+                "phase": "Running",
+                "podIP": "10.244.0.28",
+                "podIPs": [
+                    {
+                        "ip": "10.244.0.28"
+                    }
+                ],
+                "qosClass": "Burstable",
+                "startTime": "2026-10-21T23:46:01Z"
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}
