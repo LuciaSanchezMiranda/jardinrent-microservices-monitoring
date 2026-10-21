@@ -1,0 +1,40 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: jardinrent-alerts
+  namespace: jardinrent
+  labels: {proyecto: jardinrent}
+spec:
+  groups:
+    - name: jardinrent.disponibilidad
+      rules:
+        - alert: HerramientasCaido
+          expr: kube_deployment_status_replicas_available{namespace="jardinrent",deployment="herramientas"} < 1
+          for: 30s
+          labels: {severity: critical, proyecto: jardinrent}
+          annotations:
+            summary: Herramientas no tiene réplicas disponibles
+            description: Las consultas del catálogo fallan. Revisa configuración, logs, reinicios y probes del Deployment herramientas.
+        - alert: CotizacionesCaido
+          expr: kube_deployment_status_replicas_available{namespace="jardinrent",deployment="cotizaciones"} < 1
+          for: 30s
+          labels: {severity: critical, proyecto: jardinrent}
+          annotations:
+            summary: Cotizaciones no tiene réplicas disponibles
+            description: Los clientes no pueden solicitar cotizaciones. Revisa el Deployment cotizaciones.
+    - name: jardinrent.negocio
+      rules:
+        - alert: CotizacionesConTimeout
+          expr: sum(rate(cotizaciones_timeouts_total[1m])) > 0
+          for: 30s
+          labels: {severity: warning, proyecto: jardinrent}
+          annotations:
+            summary: Las cotizaciones exceden el tiempo de espera
+            description: Herramientas está demorando más que el timeout del cliente WebClient. Compara el gauge del retraso y la latencia p95.
+        - alert: HerramientaSinStock
+          expr: herramientas_stock{herramienta_id="1"} == 0
+          for: 30s
+          labels: {severity: warning, proyecto: jardinrent}
+          annotations:
+            summary: No hay podadoras disponibles para cotizar
+            description: La herramienta 1 tiene stock cero. Se rechazan oportunidades comerciales con HTTP 409; registra reposición de unidades.
